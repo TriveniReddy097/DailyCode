@@ -35,5 +35,31 @@ public:
 
 int main() {
     Solution sol;
+    int m;
+    int n;
+    cin>>m;
+    cin>>n;
+    vector<vector<int>> matrix(m,vector<int>(n,0));
+
+    for(int i=0;i<m;i++){
+        for(int j=0;j<n;j++){
+            int x;
+            cin>>x;
+            matrix[i][j]=x;
+        }
+    }
+    int target;
+    cout<<"enter target value: "<<endl;
+    cin>>target;
+    cout<<"input matrix is: "<<endl;
+    for(auto each:matrix) {
+        for(auto e:each) {
+            cout<<e;
+        }
+        cout<<endl;
+    }
+    cout<<endl;
+    cout<<"num of sub matrix are: "<<sol.numSubmatrixSumTarget(matrix, target);
+
     return 0;
 }
